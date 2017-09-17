@@ -1,0 +1,36 @@
+{
+  "name": "chat",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.13",
+    "ws": "^3.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "jest": "jest",
+    "eject": "react-scripts eject",
+    "server": "node server/index.js"
+  },
+  "devDependencies": {
+    "jest": "^21.1.0",
+    "supertest": "^3.0.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/*.spec.js"
+    ],
+    "coverageReporters": [
+      "text-summary",
+      "lcov"
+    ],
+    "bail": true,
+    "testEnvironment": "node"
+  }
+}
