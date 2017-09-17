@@ -1,11 +1,16 @@
 const Koa = require('koa')
 
-const app = module.exports = new Koa()
+const app = new Koa()
+const router = require('koa-router')()
+const homeRouter = require('./home')
 
-const hello = (ctx, next) => {
-  ctx.body = 'hello'
-}
+router
+  .get('/', (ctx, next) => {
+    ctx.body = 'hello'
+  })
 
-app.use(hello)
+app.use(router.routes())
+app.use(homeRouter.routes())
+// app.use(homeRouter.allowedMethods())
 
-app.listen(8001)
+module.exports = app.listen(8001)
